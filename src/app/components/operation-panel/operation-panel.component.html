@@ -1,3 +1,27 @@
-<p>
-  operation-panel works!
-</p>
+<div class="operation-panel-container">
+  <ul class="template-vars">
+    <li>
+      <h5>title</h5>
+      <nz-input [(ngModel)]="title" [nzPlaceHolder]="'title'"></nz-input>
+    </li>
+    <li>
+      <h5>content</h5>
+      <nz-input [(ngModel)]="content" [nzPlaceHolder]="'content'"></nz-input>
+    </li>
+  </ul>
+  <div class="publish">
+    <h5>发布地址</h5>
+    <nz-input [(ngModel)]="content" [nzPlaceHolder]="'页面存放地址'"></nz-input>
+    <nz-radio-group [(ngModel)]="publishEnvironment" class="publish-environment">
+      <label nz-radio [nzValue]="'staging'">
+        <span>测试</span>
+      </label>
+      <label nz-radio [nzValue]="'production'">
+        <span>生产</span>
+      </label>
+    </nz-radio-group>
+    <button nz-button [nzType]="'primary'" class="publish-button">
+      <i class="anticon anticon-upload"></i><span>发布</span>
+    </button>
+  </div>
+</div>

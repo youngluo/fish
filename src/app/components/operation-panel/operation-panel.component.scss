@@ -1,0 +1,34 @@
+.operation-panel-container {
+    width: 100%;
+    height: 100%;
+    border-left: solid 1px #ebebeb;
+    h5 {
+        margin-bottom: 3px;
+        font-size: 14px;
+    }
+}
+
+.template-vars {
+    max-height: 300px;
+    padding: 12px 15px;
+    border-bottom: solid 1px #ebebeb;
+    overflow-y: auto;
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+.publish {
+    padding: 18px 15px;
+    &-environment {
+        margin-top: 15px;
+    }
+    &-button {
+        display: block;
+        width: 100%;
+        margin-top: 25px;
+    }
+    h5 {
+        margin-bottom: 5px;
+    }
+}
