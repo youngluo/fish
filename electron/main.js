@@ -1,5 +1,6 @@
 const contextMenu = require('./menu');
 const electron = require('electron');
+const IpcMain = require('./ipcMain');
 const path = require('path');
 const url = require('url');
 
@@ -52,6 +53,8 @@ function createWindow() {
   //   console.log('dom-ready')
   //   mainWindow.webContents.reload();
   // });
+
+  new IpcMain(mainWindow);
 }
 
 // This method will be called when Electron has finished
