@@ -6,6 +6,8 @@ const url = require('url');
 
 const { BrowserWindow, app, Menu } = electron;
 
+require('electron-reload')(path.join(__dirname, 'electron'));
+
 let mainWindow;
 
 function createWindow() {

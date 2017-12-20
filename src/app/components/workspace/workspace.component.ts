@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ipcRenderer } from 'electron';
+// import { Promise } from 'q';
+const { ipcRenderer } = window.require('electron');
 
 @Component({
   selector: 'app-workspace',
@@ -15,5 +16,9 @@ export class WorkspaceComponent implements OnInit {
 
   getTemplate() {
     ipcRenderer.send('readTemplate');
+
+    ipcRenderer.on('getTemplate', (event, files) => {
+      console.log(files);
+    });
   }
 }

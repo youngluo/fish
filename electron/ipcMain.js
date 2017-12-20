@@ -1,5 +1,6 @@
-const electron = require('electron');
-const { ipcMain, dialog } = electron;
+const { ipcMain, dialog } = require('electron');
+const path = require('path');
+const fs = require('fs');
 
 module.exports = class IpcMain {
   constructor(mainWindow) {
@@ -27,12 +28,38 @@ module.exports = class IpcMain {
       }
     });
 
-    ipcMain.on('readTemplate', () => {
+    ipcMain.on('readTemplate', (event) => {
       dialog.showOpenDialog({
-        properties: ['openFile', 'openDirectory']
-      }, function (files) {
-        console.log(files)
-      })
+        properties: ['openDirectory', 'openFile']
+      }, files => this.readFileList(event, files));
+    });
+  }
+
+  readFileList(event, files) {
+    if (!files) return;
+
+    const url = files[0];
+    let results = [];
+
+    fs.readdir(url, (err, files) => {
+      if (err) return;
+
+      files.forEach(filename => {
+        const readPath = path.join(url, filename);
+
+        fs.statSync(readPath, (err, stats) => {
+          if (err) return;
+
+          console.log(stats);
+          if (stats.isFile()) {
+            results.push({
+              name: filename
+            });
+          }
+        });
+      });
+
+      event.sender.send('getTemplate', results);
     });
   }
 }
