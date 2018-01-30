@@ -1,0 +1,20 @@
+<div nz-row [nzGutter]="8" class="container">
+  <div nz-col [nzSpan]="12">
+    <a routerLink="/template">
+      <nz-card class="card">
+        <ng-template #body>
+          <p>模板</p>
+          <i class="anticon anticon-plus"></i>
+        </ng-template>
+      </nz-card>
+    </a>
+  </div>
+  <div nz-col [nzSpan]="12">
+    <nz-card class="card">
+      <ng-template #body>
+        <p>自定义</p>
+        <i class="anticon anticon-plus"></i>
+      </ng-template>
+    </nz-card>
+  </div>
+</div>

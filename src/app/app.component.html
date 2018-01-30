@@ -1,12 +1,4 @@
 <nz-layout class="layout">
   <app-header></app-header>
-  <nz-layout>
-    <nz-sider [nzWidth]="200" class="sider">
-      <app-workspace></app-workspace>
-    </nz-sider>
-    <nz-content>Content</nz-content>
-    <nz-sider [nzWidth]="200" class="sider">
-      <app-operation-panel></app-operation-panel>
-    </nz-sider>
-  </nz-layout>
+  <router-outlet></router-outlet>
 </nz-layout>
