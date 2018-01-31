@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/index',
+    redirectTo: 'index',
     pathMatch: 'full'
   },
 ];
