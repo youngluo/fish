@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { IndexComponent } from '../pages/index/index.component';
 import { TemplateComponent } from '../pages/template/template.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: 'index',
     component: IndexComponent
@@ -17,5 +17,3 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 ];
-
-export default routes;
