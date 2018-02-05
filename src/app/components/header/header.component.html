@@ -1,3 +1,15 @@
 <nz-header>
-  FISH
+  <div nz-row>
+    <div nz-col [nzSpan]="4">
+      <div class="logo">FISH</div>
+    </div>
+    <div nz-col [nzSpan]="10">
+      <button nz-button [nzType]="'default'" [nzSize]="'small'" (click)="goBack($event)" class="no-drag" [disabled]="isIndex">
+        <i class="anticon anticon-arrow-left"></i>
+      </button>
+    </div>
+    <div nz-col [nzSpan]="10">
+      col-12
+    </div>
+  </div>
 </nz-header>

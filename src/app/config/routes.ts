@@ -5,7 +5,10 @@ import { TemplateComponent } from '../pages/template/template.component';
 export const routes: Routes = [
   {
     path: 'index',
-    component: IndexComponent
+    component: IndexComponent,
+    data: {
+      isIndex: true
+    }
   },
   {
     path: 'template',

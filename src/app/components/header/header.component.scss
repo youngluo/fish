@@ -1,8 +1,13 @@
 .ant-layout-header {
     height: 45px;
+    padding: 0 30px;
     line-height: 45px;
     border: solid 1px #ebebeb;
     background-color: #fff;
-    text-align: center;
+    overflow: hidden;
     -webkit-app-region: drag;
+}
+
+.no-drag {
+    -webkit-app-region: no-drag;
 }
